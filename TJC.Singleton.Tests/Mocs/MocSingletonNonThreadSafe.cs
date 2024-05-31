@@ -1,6 +1,4 @@
-﻿using TJC.Singleton.Tests.Interfaces;
-
-namespace TJC.Singleton.Tests.Mocs;
+﻿namespace TJC.Singleton.Tests.Mocs;
 
 internal class MocSingletonNonThreadSafe : IIdentifier
 {

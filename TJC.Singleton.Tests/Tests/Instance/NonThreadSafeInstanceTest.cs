@@ -1,7 +1,3 @@
-using System.Diagnostics;
-using TJC.Singleton.Tests.Helpers;
-using TJC.Singleton.Tests.Mocs;
-
 namespace TJC.Singleton.Tests.Tests.Instance;
 
 [TestClass]
