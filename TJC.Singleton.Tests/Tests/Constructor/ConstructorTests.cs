@@ -16,9 +16,9 @@ public class ConstructorTests
     }
 
     [TestMethod]
-    public void PublicConstructorThrowsException()
+    public void PublicParameterlessConstructorThrowsException()
     {
-        Assert.ThrowsException<InvalidSingletonConstructorException>(() => MockSingletonPublicConstructor.Instance);
+        Assert.ThrowsException<InvalidSingletonConstructorException>(() => MockSingletonPublicParameterlessConstructor.Instance);
     }
 
     [TestMethod]
