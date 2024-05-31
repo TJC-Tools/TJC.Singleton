@@ -2,6 +2,13 @@
 
 internal static class MocSingletonFactory
 {
+    /// <summary>
+    /// Use multiple threads to attempt to get multiple instances of a singleton.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="getSingleton"></param>
+    /// <param name="amount"></param>
+    /// <returns></returns>
     public static List<T> GetInstances<T>(Func<T> getSingleton, int amount)
     {
         var singletons = new List<T>();
