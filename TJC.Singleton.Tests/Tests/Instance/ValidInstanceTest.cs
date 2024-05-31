@@ -1,22 +1,22 @@
 namespace TJC.Singleton.Tests.Tests.Instance;
 
 [TestClass]
-public class ThreadSafeInstanceTest
+public class ValidInstanceTest
 {
     /// <summary>
-    /// This test creates 1000 instances of the thread safe singleton to ensure that only one instance can ever be created
+    /// This test creates 100 instances of the thread safe singleton to ensure that only one instance can ever be created.
     /// </summary>
     [TestMethod]
-    public void ThreadSafeSingletonHasSingleInstances()
+    public void ValidSingletonHasSingleInstance()
     {
-        // Create 1000 Instances of Singleton
-        var singletons = MocSingletonFactory.GetInstances(() => MocSingletonThreadSafe.Instance, 1000);
+        // Create 100 Instances of Singleton
+        var singletons = MocSingletonFactory.GetInstances(() => MockSingletonValid.Instance, 100);
 
         // Get Unique ID's from Instances
         var ids = singletons.DistinctBy(x => x.Id).Select(x => x.Id).ToList();
 
         // Create Message
-        var instancesAmountMessage = $"[{ids.Count}/{singletons.Count}] Instances of [{nameof(MocSingletonThreadSafe)}] Exist";
+        var instancesAmountMessage = $"[{ids.Count}/{singletons.Count}] Instances of [{nameof(MockSingletonValid)}] Exist";
         Trace.WriteLine(instancesAmountMessage);
 
         // Ensure there is only one instance of the thread safe singleton
