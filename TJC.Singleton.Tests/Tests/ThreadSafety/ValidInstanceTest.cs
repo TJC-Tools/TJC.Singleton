@@ -1,4 +1,4 @@
-namespace TJC.Singleton.Tests.Tests.Instance;
+namespace TJC.Singleton.Tests.Tests.ThreadSafety;
 
 [TestClass]
 public class ValidInstanceTest
