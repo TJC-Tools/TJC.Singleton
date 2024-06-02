@@ -1,3 +1,5 @@
+[![NuGet Version and Downloads count](https://buildstats.info/nuget/TJC.Singleton)](https://www.nuget.org/packages/TJC.Singleton)
+
 # TJC Singleton
 The singleton base class ensures that *only* one **instance** of a class will exist.
 
