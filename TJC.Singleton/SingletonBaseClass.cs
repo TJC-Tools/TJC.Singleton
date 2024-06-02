@@ -1,30 +1,38 @@
 ﻿using TJC.Singleton.Exceptions;
+using TJC.Singleton.Helpers;
 
 namespace TJC.Singleton;
 
 /// <summary>
-/// Creates a single instance of <seealso cref="TMyClass"/> that can be accessed through the <see cref="Instance"/> property.
+/// Creates a single instance of <seealso cref="TDerivedClass"/> that can be accessed through the <see cref="Instance"/> property.
 /// </summary>
-/// <typeparam name="TMyClass"></typeparam>
+/// <typeparam name="TDerivedClass"></typeparam>
 /// <exception cref="InvalidSingletonConstructorException">Must have a non-public parameterless constructor.</exception>
-public abstract class SingletonBaseClass<TMyClass> where TMyClass : SingletonBaseClass<TMyClass>
+public abstract class SingletonBaseClass<TDerivedClass> where TDerivedClass : SingletonBaseClass<TDerivedClass>
 {
-    private static readonly Lazy<TMyClass> _instance = new(CreateInstance);
+    #region Fields
 
-    public static TMyClass Instance => _instance.Value;
+    private static readonly Lazy<TDerivedClass> _instance = new(CreateInstance);
 
-    private static TMyClass CreateInstance()
+    #endregion
+
+    #region Properties
+
+    public static TDerivedClass Instance => _instance.Value;
+
+    public static bool IsInstantiated => _instance.IsValueCreated;
+
+    #endregion
+
+    #region Methods
+
+    private static TDerivedClass CreateInstance()
     {
-        // Ensure there is no public constructor
-        var pubConstructors = typeof(TMyClass).GetConstructors().Where(x => x.IsPublic).ToList();
-        if (pubConstructors.Count != 0)
-            throw new InvalidSingletonConstructorException($"[{typeof(TMyClass)}] singleton should not have public constructor{(pubConstructors.Count > 1 ? "s" : string.Empty)}");
-
-        // Ensure there is a non-public parameterless constructor
-        var ctor = typeof(TMyClass).GetConstructor(System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic, null, [], null) ?? 
-            throw new InvalidSingletonConstructorException($"[{typeof(TMyClass)}] singleton is missing a non-public parameterless constructor");
-
-        // Use reflection to create an instance of the derived class
-        return (TMyClass)ctor.Invoke(null) ?? throw new SingletonInitializationException($"[{typeof(TMyClass)}] singleton failed to initialize");
+        // Use reflection to create an instance of the derived class.
+        var ctor = SingletonConstructorHelpers.GetSingletonConstructor<TDerivedClass>();
+        return (TDerivedClass)ctor.Invoke(null) ??
+               throw new SingletonInitializationException($"[{typeof(TDerivedClass)}] singleton failed to initialize");
     }
+
+    #endregion
 }
