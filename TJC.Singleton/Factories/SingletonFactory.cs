@@ -8,9 +8,9 @@ public static class SingletonFactory
 {
     #region Constants
 
-    private const string InstanceName = nameof(SingletonBaseClass<PlaceholderSingleton>.Instance);
+    private const string InstanceName = nameof(SingletonBase<PlaceholderSingleton>.Instance);
 
-    private class PlaceholderSingleton : SingletonBaseClass<PlaceholderSingleton>;
+    private class PlaceholderSingleton : SingletonBase<PlaceholderSingleton>;
 
     #endregion
 

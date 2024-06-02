@@ -9,7 +9,7 @@ public static class SingletonIdentifierHelpers
             return false;
 
         // Ensure type derives from singleton
-        var openGenericType = typeof(SingletonBaseClass<>);
+        var openGenericType = typeof(SingletonBase<>);
 
         var baseType = type.BaseType;
         while (baseType != null)
