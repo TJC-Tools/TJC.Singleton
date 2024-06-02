@@ -1,9 +1,9 @@
 ﻿namespace TJC.Singleton.Tests.Mocks.Valid;
 
 /// <summary>
-/// This singleton is an example of the proper intended use of the <see cref="SingletonBaseClass{TMyClass}"/>.
+/// This singleton is an example of the proper intended use of the <see cref="SingletonBase{TMyClass}"/>.
 /// </summary>
-internal class MockSingletonValid : SingletonBaseClass<MockSingletonValid>, IIdentifier
+internal class MockSingletonValid : SingletonBase<MockSingletonValid>, IIdentifier
 {
     private MockSingletonValid() { }
 

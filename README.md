@@ -1,11 +1,16 @@
 [![NuGet Version and Downloads count](https://buildstats.info/nuget/TJC.Singleton)](https://www.nuget.org/packages/TJC.Singleton)
 
-# TJC Singleton
-The singleton base class ensures that *only* one **instance** of a class will exist.
+This singleton base & factory can be used to instantiate all singletons at once.
 
-## Details
-- This is done in a thread-safe way using a **Lazy** implementation.
+---
+## [SingletonBase](./TJC.Singleton/SingletonBase.cs)
+- Ensures that *only* one **instance** of a **derived class** will exist.
+- This is implemented in a thread-safe way using **Lazy**.
 - It also ensures that the derived class has a **private** or **protected** constructor by throwing an **exception** at run-time.
 
-## Examples
-- Please see [this mock class](./TJC.Singleton.Tests/Mocks/Valid/MockSingletonValid.cs) for an example of the intended use of the [SingletonBaseClass](./TJC.Singleton/SingletonBaseClass.cs).
+### Examples
+- [This mock class](./TJC.Singleton.Tests/Mocks/Valid/MockSingletonValid.cs) shows a example use-case.
+
+---
+## [SingletonFactory](./TJC.Singleton/Factories/SingletonFactory.cs)
+- Can be used to instantiate **ALL** classes that derive from [SingletonBase](./TJC.Singleton/SingletonBase.cs).

@@ -1,6 +1,6 @@
 ﻿namespace TJC.Singleton.Tests.Mocks.InvalidConstructors;
 
-internal class MockSingletonPublicParameterlessConstructor : SingletonBaseClass<MockSingletonPublicParameterlessConstructor>, IIdentifier
+internal class MockSingletonPublicParameterlessConstructor : SingletonBase<MockSingletonPublicParameterlessConstructor>, IIdentifier
 {
     public MockSingletonPublicParameterlessConstructor() { }
 

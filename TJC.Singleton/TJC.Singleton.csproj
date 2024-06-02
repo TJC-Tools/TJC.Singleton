@@ -4,8 +4,8 @@
 	<TargetFramework>net8.0</TargetFramework>
 	<ImplicitUsings>enable</ImplicitUsings>
 	<Nullable>enable</Nullable>
-	<Title>TJC Singleton Base Class</Title>
-	<Description>Singleton Base Class</Description>
+	<Title>TJC Singleton Base</Title>
+	<Description>Singleton Base &amp; Singleton Factory</Description>
 	<RepositoryUrl>https://github.com/TJC-Tools/TJC.Singleton</RepositoryUrl>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
