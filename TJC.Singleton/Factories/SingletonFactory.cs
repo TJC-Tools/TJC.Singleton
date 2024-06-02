@@ -14,11 +14,11 @@ public static class SingletonFactory
 
     #endregion
 
-    public static void InstantiatedAll(bool trace         = true,
+    public static void InstantiatedAll(bool trace = true,
                                        bool throwIfFailed = false)
     {
         var failedToInstantiate = new List<string>();
-        var singletons          = GetSingletonTypes();
+        var singletons = GetSingletonTypes();
 
         if (trace)
             Trace.WriteLine($"{singletons.Count} Singletons Found");

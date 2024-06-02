@@ -30,7 +30,7 @@ public abstract class SingletonBaseClass<TDerivedClass> where TDerivedClass : Si
     {
         // Use reflection to create an instance of the derived class.
         var ctor = SingletonConstructorHelpers.GetSingletonConstructor<TDerivedClass>();
-        return (TDerivedClass)ctor.Invoke(null) ?? 
+        return (TDerivedClass)ctor.Invoke(null) ??
                throw new SingletonInitializationException($"[{typeof(TDerivedClass)}] singleton failed to initialize");
     }
 

@@ -2,10 +2,12 @@
 
 internal class MockSingletonPrivateConstructorWithParameters : SingletonBaseClass<MockSingletonPrivateConstructorWithParameters>, IIdentifier
 {
+#pragma warning disable IDE0051
     private MockSingletonPrivateConstructorWithParameters(Guid? id = null)
+#pragma warning restore IDE0051
     {
         Id = id ?? Guid.NewGuid();
     }
-
+    
     public Guid Id { get; }
 }

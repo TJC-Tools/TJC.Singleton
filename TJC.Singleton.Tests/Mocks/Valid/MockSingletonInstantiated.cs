@@ -2,9 +2,7 @@
 
 internal class MockSingletonInstantiated : SingletonBaseClass<MockSingletonInstantiated>, IIdentifier
 {
-    private MockSingletonInstantiated() {}//=> IsInstantiated = true;
+    private MockSingletonInstantiated() { }
 
     public Guid Id { get; } = Guid.NewGuid();
-
-    //public static bool IsInstantiated { get; private set; }
 }
