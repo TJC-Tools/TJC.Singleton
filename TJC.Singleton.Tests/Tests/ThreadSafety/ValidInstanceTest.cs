@@ -10,7 +10,7 @@ public class ValidInstanceTest
     public void ValidSingletonHasSingleInstance()
     {
         // Create 100 Instances of Singleton
-        var singletons = MocSingletonFactory.GetInstances(() => MockSingletonValid.Instance, 100);
+        var singletons = MockSingletonFactory.GetInstances(() => MockSingletonValid.Instance, 100);
 
         // Get Unique ID's from Instances
         var ids = singletons.DistinctBy(x => x.Id).Select(x => x.Id).ToList();

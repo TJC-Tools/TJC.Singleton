@@ -1,6 +1,6 @@
 ﻿namespace TJC.Singleton.Tests.Helpers;
 
-internal static class MocSingletonFactory
+internal static class MockSingletonFactory
 {
     /// <summary>
     /// Use multiple threads to attempt to get multiple instances of a singleton.
