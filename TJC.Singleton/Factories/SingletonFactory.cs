@@ -14,8 +14,8 @@ public static class SingletonFactory
 
     #endregion
 
-    public static void InstantiatedAll(bool trace = true,
-                                       bool throwIfFailed = false)
+    public static void InstantiateAll(bool trace = true,
+                                      bool throwIfFailed = false)
     {
         var failedToInstantiate = new List<string>();
         var singletons = GetSingletonTypes();
