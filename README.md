@@ -1,4 +1,5 @@
-![GitHub Tag](https://img.shields.io/github/v/tag/TJC-Tools/TJC.Singleton) [![NuGet Version](https://img.shields.io/nuget/v/TJC.Singleton)](https://www.nuget.org/packages/TJC.Singleton)
+![GitHub Tag](https://img.shields.io/github/v/tag/TJC-Tools/TJC.Singleton) [![GitHub Release](https://img.shields.io/github/v/release/TJC-Tools/TJC.Singleton)
+](https://github.com/TJC-Tools/TJC.Singleton/releases/latest) [![NuGet Version](https://img.shields.io/nuget/v/TJC.Singleton)](https://www.nuget.org/packages/TJC.Singleton)
 
 [![NuGet Downloads](https://img.shields.io/nuget/dt/TJC.Singleton)](https://www.nuget.org/packages/TJC.Singleton) ![Size](https://img.shields.io/github/repo-size/TJC-Tools/TJC.Singleton) [![License](https://img.shields.io/github/license/TJC-Tools/TJC.Singleton.svg)](LICENSE)
 
