@@ -14,6 +14,12 @@ public static class SingletonFactory
 
     #endregion
 
+    /// <summary>
+    /// Instantiate all singletons in the current app domain.
+    /// </summary>
+    /// <param name="trace"></param>
+    /// <param name="throwIfFailed"></param>
+    /// <exception cref="Exception"></exception>
     public static void InstantiateAll(bool trace = true,
                                       bool throwIfFailed = false)
     {
@@ -31,6 +37,10 @@ public static class SingletonFactory
             throw new Exception($"{string.Join(", ", failedToInstantiate)}");
     }
 
+    /// <summary>
+    /// Get all singleton types in the current app domain.
+    /// </summary>
+    /// <returns></returns>
     public static List<Type> GetSingletonTypes()
     {
         var singletons = new List<Type>();
@@ -53,6 +63,22 @@ public static class SingletonFactory
         return singletons;
     }
 
+    /// <summary>
+    /// Instantiates a singleton of type <seealso cref="T"/>.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="trace"></param>
+    /// <returns></returns>
+    public static bool Instantiate<T>(bool trace) =>
+        Instantiate(typeof(T), trace);
+
+    /// <summary>
+    /// Instantiates a singleton of given type.
+    /// </summary>
+    /// <param name="singleton"></param>
+    /// <param name="trace"></param>
+    /// <returns></returns>
+    /// <exception cref="Exception"></exception>
     private static bool Instantiate(this Type singleton, bool trace)
     {
         if (trace)
