@@ -12,7 +12,7 @@ public abstract class SingletonBase<TDerivedClass> where TDerivedClass : Singlet
 {
     #region Fields
 
-    private static readonly Lazy<TDerivedClass> _instance = new(CreateInstance);
+    private static Lazy<TDerivedClass> _instance = new(CreateInstance);
 
     #endregion
 
@@ -26,12 +26,30 @@ public abstract class SingletonBase<TDerivedClass> where TDerivedClass : Singlet
 
     #region Methods
 
+    /// <summary>
+    /// This method is called when the singleton is first accessed.
+    /// <para>It is used to create the singleton instance by calling the constructor of the derived class.</para>
+    /// </summary>
+    /// <returns></returns>
+    /// <exception cref="SingletonInitializationException"></exception>
     private static TDerivedClass CreateInstance()
     {
         // Use reflection to create an instance of the derived class.
         var ctor = SingletonConstructorHelpers.GetSingletonConstructor<TDerivedClass>();
         return (TDerivedClass)ctor.Invoke(null) ??
                throw new SingletonInitializationException($"[{typeof(TDerivedClass)}] singleton failed to initialize");
+    }
+
+    /// <summary>
+    /// This method is used to set the singleton instance to a specific value.
+    /// <para>It is primarily used to set the instance to a predefined type.</para>
+    /// <para>For example, singletons are often used as settings, which have predefined types, such as <c>Default</c>, <c>Verbose</c>, <c>Silent</c>, etc.</para>
+    /// <para>This is set as <c>protected</c> so that it can only be accessed from within the singleton itself, since not all singletons should be able to be set.</para>
+    /// </summary>
+    /// <param name="value"></param>
+    protected static void SetBaseInstance(TDerivedClass value)
+    {
+        _instance = new(() => value);
     }
 
     #endregion
