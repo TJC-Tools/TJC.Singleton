@@ -12,14 +12,23 @@ public abstract class SingletonBase<TDerivedClass> where TDerivedClass : Singlet
 {
     #region Fields
 
+    /// <summary>
+    /// The private singleton instance.
+    /// </summary>
     private static Lazy<TDerivedClass> _instance = new(CreateInstance);
 
     #endregion
 
     #region Properties
 
+    /// <summary>
+    /// The singleton instance.
+    /// </summary>
     public static TDerivedClass Instance => _instance.Value;
 
+    /// <summary>
+    /// Check if the singleton has been instantiated.
+    /// </summary>
     public static bool IsInstantiated => _instance.IsValueCreated;
 
     #endregion
