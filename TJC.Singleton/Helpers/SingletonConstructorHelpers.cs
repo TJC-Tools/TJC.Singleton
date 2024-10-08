@@ -7,9 +7,20 @@ public static class SingletonConstructorHelpers
 {
     #region Get Singlet Constructor
 
+    /// <summary>
+    /// Gets the singleton constructor for the type <seealso cref="T"/>.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <returns></returns>
     public static ConstructorInfo GetSingletonConstructor<T>() =>
         GetSingletonConstructor(typeof(T));
 
+    /// <summary>
+    /// Gets the singleton constructor for the type.
+    /// </summary>
+    /// <param name="type"></param>
+    /// <returns></returns>
+    /// <exception cref="InvalidSingletonConstructorException"></exception>
     public static ConstructorInfo GetSingletonConstructor(Type type)
     {
         // Ensure there is no public constructor
@@ -28,9 +39,19 @@ public static class SingletonConstructorHelpers
 
     #region Check if Singleton has Valid Constructor
 
+    /// <summary>
+    /// Checks if a singleton of type <seealso cref="T"/> has a valid constructor.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <returns></returns>
     public static bool HasValidSingletonConstructor<T>() =>
         HasValidSingletonConstructor(typeof(T));
 
+    /// <summary>
+    /// Checks if the singleton has a valid constructor.
+    /// </summary>
+    /// <param name="type"></param>
+    /// <returns></returns>
     public static bool HasValidSingletonConstructor(Type type)
     {
         try
