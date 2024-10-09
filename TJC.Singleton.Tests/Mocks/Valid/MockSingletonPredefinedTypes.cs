@@ -1,7 +1,8 @@
-﻿namespace TJC.Singleton.Tests.Mocks.Valid;
+namespace TJC.Singleton.Tests.Mocks.Valid;
 
 /// <summary>
 /// This singleton is an example of the proper intended use of the <see cref="SingletonBase{TMyClass}"/>.
+/// <para>This singleton has predefined types, similar to what may be seen within a settings singleton.</para>
 /// </summary>
 internal class MockSingletonPreDefinedTypes : SingletonBase<MockSingletonPreDefinedTypes>
 {
