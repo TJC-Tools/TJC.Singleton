@@ -25,5 +25,10 @@ public class SetInstanceTests
 
         Assert.AreEqual("123", MockSingletonPreDefinedTypes.Instance.Setting1);
         Assert.AreEqual("456", MockSingletonPreDefinedTypes.Instance.Setting2);
+
+        MockSingletonPreDefinedTypes.SetInstance(MockSingletonPreDefinedTypes.Symbols);
+
+        Assert.AreEqual("!@#", MockSingletonPreDefinedTypes.Instance.Setting1);
+        Assert.AreEqual("$%^", MockSingletonPreDefinedTypes.Instance.Setting2);
     }
 }

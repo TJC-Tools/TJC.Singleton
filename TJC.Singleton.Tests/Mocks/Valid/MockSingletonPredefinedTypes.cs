@@ -1,4 +1,4 @@
-namespace TJC.Singleton.Tests.Mocks.Valid;
+﻿namespace TJC.Singleton.Tests.Mocks.Valid;
 
 /// <summary>
 /// This singleton is an example of the proper intended use of the <see cref="SingletonBase{TMyClass}"/>.
@@ -7,6 +7,8 @@ namespace TJC.Singleton.Tests.Mocks.Valid;
 internal class MockSingletonPreDefinedTypes : SingletonBase<MockSingletonPreDefinedTypes>
 {
     #region Constructor
+
+    private MockSingletonPreDefinedTypes() { }
 
     #endregion
 
@@ -19,6 +21,8 @@ internal class MockSingletonPreDefinedTypes : SingletonBase<MockSingletonPreDefi
     public static MockSingletonPreDefinedTypes Alphabet { get; } = new() { Setting1 = "ABC", Setting2 = "DEF" };
 
     public static MockSingletonPreDefinedTypes Numbers { get; } = new() { Setting1 = "123", Setting2 = "456" };
+
+    public static MockSingletonPreDefinedTypes Symbols { get; } = new() { Setting1 = "!@#", Setting2 = "$%^" };
 
     #endregion
 
