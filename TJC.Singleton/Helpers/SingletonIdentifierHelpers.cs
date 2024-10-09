@@ -2,6 +2,12 @@
 
 public static class SingletonIdentifierHelpers
 {
+    /// <summary>
+    /// Determines if a type is a concrete singleton.
+    /// <para>I.e. If it is a <c>non-abstract class</c> that derives from <see cref="SingletonBase{TDerivedClass}"/>, or a class that does (recursively).</para>
+    /// </summary>
+    /// <param name="type"></param>
+    /// <returns></returns>
     public static bool IsConcreteSingleton(Type type)
     {
         // Ensure type is a concrete class
