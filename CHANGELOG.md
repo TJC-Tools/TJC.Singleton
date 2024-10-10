@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0] - 2024-10-10
+
 ### Added
 
 - Changelog Automation
@@ -17,3 +19,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Created singleton base
 - Created factories to create all singletons
+
+[Unreleased]: https://github.com/TJC-Tools/TJC.Singleton/compare/v0.3.0...HEAD
+
+[0.3.0]: https://github.com/TJC-Tools/TJC.Singleton/compare/v0.2.0...v0.3.0
+
+[0.2.0]: https://github.com/TJC-Tools/TJC.Singleton/releases/tag/v0.2.0
