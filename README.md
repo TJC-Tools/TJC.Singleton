@@ -22,7 +22,7 @@
 
 <br/>
 
-<a href="https://www.nuget.org/packages/TJC.Singleton">
+<a href="https://github.com/TJC-Tools/TJC.Singleton">
   <img alt="Last commit" src="https://img.shields.io/github/last-commit/TJC-Tools/TJC.Singleton?style=for-the-badge&logo=git&logoColor=D9E0EE&labelColor=302D41&color=mediumpurple"/>
 </a>
 
