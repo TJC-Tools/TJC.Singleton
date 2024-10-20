@@ -2,6 +2,8 @@
 
 [![NuGet Downloads](https://img.shields.io/nuget/dt/TJC.Singleton)](https://www.nuget.org/packages/TJC.Singleton) ![Size](https://img.shields.io/github/repo-size/TJC-Tools/TJC.Singleton) [![License](https://img.shields.io/github/license/TJC-Tools/TJC.Singleton.svg)](LICENSE)
 
+[![codecov](https://codecov.io/gh/TJC-Tools/TJC.Test/graph/badge.svg?token=92707C5KH4)](https://codecov.io/gh/TJC-Tools/TJC.Singleton)
+
 This Singleton base & factory can be used to instantiate all Singletons at once.
 
 ---
