@@ -8,7 +8,8 @@ namespace TJC.Singleton;
 /// </summary>
 /// <typeparam name="TDerivedClass"></typeparam>
 /// <exception cref="InvalidSingletonConstructorException">Must have a non-public parameterless constructor.</exception>
-public abstract class SingletonBase<TDerivedClass> where TDerivedClass : SingletonBase<TDerivedClass>
+public abstract class SingletonBase<TDerivedClass>
+    where TDerivedClass : SingletonBase<TDerivedClass>
 {
     #region Fields
 
@@ -45,8 +46,10 @@ public abstract class SingletonBase<TDerivedClass> where TDerivedClass : Singlet
     {
         // Use reflection to create an instance of the derived class.
         var ctor = SingletonConstructorHelpers.GetSingletonConstructor<TDerivedClass>();
-        return (TDerivedClass)ctor.Invoke(null) ??
-               throw new SingletonInitializationException($"[{typeof(TDerivedClass)}] singleton failed to initialize");
+        return (TDerivedClass)ctor.Invoke(null)
+            ?? throw new SingletonInitializationException(
+                $"[{typeof(TDerivedClass)}] singleton failed to initialize"
+            );
     }
 
     /// <summary>

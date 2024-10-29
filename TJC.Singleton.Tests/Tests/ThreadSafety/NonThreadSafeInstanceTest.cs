@@ -13,13 +13,17 @@ public class NonThreadSafeInstanceTest
     public void NonThreadSafeSingletonHasMultipleInstances()
     {
         // Create 100 Instances of Singleton
-        var singletons = MockSingletonFactory.GetInstances(() => MockSingletonNonThreadSafe.Instance, 100);
+        var singletons = MockSingletonFactory.GetInstances(
+            () => MockSingletonNonThreadSafe.Instance,
+            100
+        );
 
         // Get Unique ID's from Instances
         var ids = singletons.DistinctBy(x => x.Id).Select(x => x.Id).ToList();
 
         // Create Message
-        var instancesAmountMessage = $"[{ids.Count}/{singletons.Count}] Instances of [{nameof(MockSingletonNonThreadSafe)}] Exist";
+        var instancesAmountMessage =
+            $"[{ids.Count}/{singletons.Count}] Instances of [{nameof(MockSingletonNonThreadSafe)}] Exist";
         Trace.WriteLine(instancesAmountMessage);
 
         // Ensure there are multiple different instances of the non-thread safe singleton

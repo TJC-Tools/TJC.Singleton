@@ -20,8 +20,7 @@ public static class SingletonFactory
     /// <param name="trace"></param>
     /// <param name="throwIfFailed"></param>
     /// <exception cref="Exception"></exception>
-    public static void InstantiateAll(bool trace = true,
-                                      bool throwIfFailed = false)
+    public static void InstantiateAll(bool trace = true, bool throwIfFailed = false)
     {
         var failedToInstantiate = new List<string>();
         var singletons = GetSingletonTypes();
@@ -69,8 +68,7 @@ public static class SingletonFactory
     /// <typeparam name="T"></typeparam>
     /// <param name="trace"></param>
     /// <returns></returns>
-    public static bool Instantiate<T>(bool trace) =>
-        Instantiate(typeof(T), trace);
+    public static bool Instantiate<T>(bool trace) => Instantiate(typeof(T), trace);
 
     /// <summary>
     /// Instantiates a singleton of given type.
@@ -83,12 +81,16 @@ public static class SingletonFactory
     {
         if (trace)
             Trace.WriteLine($"[{singleton.Name}] Instantiating");
-        var instanceProp = singleton.GetProperty(InstanceName,
-                                                 BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy)
-                        ?? throw new Exception($"[{singleton.Name}] does not have property [{InstanceName}]");
+        var instanceProp =
+            singleton.GetProperty(
+                InstanceName,
+                BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy
+            ) ?? throw new Exception($"[{singleton.Name}] does not have property [{InstanceName}]");
         var instanceValue = instanceProp.GetValue(singleton);
         if (trace)
-            Trace.WriteLine($"[{singleton.Name}] {(instanceValue != null ? "Instantiated" : "Failed to Instantiate")}");
+            Trace.WriteLine(
+                $"[{singleton.Name}] {(instanceValue != null ? "Instantiated" : "Failed to Instantiate")}"
+            );
         return instanceValue != null;
     }
 }

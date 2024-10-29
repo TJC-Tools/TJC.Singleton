@@ -1,6 +1,8 @@
 ﻿namespace TJC.Singleton.Tests.Mocks.InvalidConstructors;
 
-internal class MockSingletonProtectedConstructorWithParameters : SingletonBase<MockSingletonPrivateConstructorWithParameters>, IIdentifier
+internal class MockSingletonProtectedConstructorWithParameters
+    : SingletonBase<MockSingletonPrivateConstructorWithParameters>,
+        IIdentifier
 {
     protected MockSingletonProtectedConstructorWithParameters(Guid? id = null)
     {
