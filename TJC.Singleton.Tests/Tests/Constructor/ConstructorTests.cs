@@ -21,7 +21,7 @@ public class ConstructorTests
     public void PublicParameterlessConstructorThrowsException()
     {
         Assert.ThrowsException<InvalidSingletonConstructorException>(
-            () => MockSingletonPublicParameterlessConstructor.Instance
+            () => MockSingletonPublicParameterLessConstructor.Instance
         );
     }
 
