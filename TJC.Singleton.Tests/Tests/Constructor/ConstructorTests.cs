@@ -12,24 +12,32 @@ public class ConstructorTests
     [TestMethod]
     public void NoConstructorThrowsException()
     {
-        Assert.ThrowsException<InvalidSingletonConstructorException>(() => MockSingletonNoConstructor.Instance);
+        Assert.ThrowsException<InvalidSingletonConstructorException>(
+            () => MockSingletonNoConstructor.Instance
+        );
     }
 
     [TestMethod]
     public void PublicParameterlessConstructorThrowsException()
     {
-        Assert.ThrowsException<InvalidSingletonConstructorException>(() => MockSingletonPublicParameterlessConstructor.Instance);
+        Assert.ThrowsException<InvalidSingletonConstructorException>(
+            () => MockSingletonPublicParameterLessConstructor.Instance
+        );
     }
 
     [TestMethod]
     public void ProtectedConstructorWithParametersThrowsException()
     {
-        Assert.ThrowsException<InvalidSingletonConstructorException>(() => MockSingletonProtectedConstructorWithParameters.Instance);
+        Assert.ThrowsException<InvalidSingletonConstructorException>(
+            () => MockSingletonProtectedConstructorWithParameters.Instance
+        );
     }
 
     [TestMethod]
     public void PrivateConstructorWithParametersThrowsException()
     {
-        Assert.ThrowsException<InvalidSingletonConstructorException>(() => MockSingletonPrivateConstructorWithParameters.Instance);
+        Assert.ThrowsException<InvalidSingletonConstructorException>(
+            () => MockSingletonPrivateConstructorWithParameters.Instance
+        );
     }
 }

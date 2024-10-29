@@ -14,15 +14,20 @@ internal class MockSingletonPreDefinedTypes : SingletonBase<MockSingletonPreDefi
 
     #region Predefined Types
 
-    public static MockSingletonPreDefinedTypes Default { get; } = new() { Setting1 = "Setting1", Setting2 = "Setting2" };
+    public static MockSingletonPreDefinedTypes Default { get; } =
+        new() { Setting1 = "Setting1", Setting2 = "Setting2" };
 
-    public static MockSingletonPreDefinedTypes Empty { get; } = new() { Setting1 = string.Empty, Setting2 = string.Empty };
+    public static MockSingletonPreDefinedTypes Empty { get; } =
+        new() { Setting1 = string.Empty, Setting2 = string.Empty };
 
-    public static MockSingletonPreDefinedTypes Alphabet { get; } = new() { Setting1 = "ABC", Setting2 = "DEF" };
+    public static MockSingletonPreDefinedTypes Alphabet { get; } =
+        new() { Setting1 = "ABC", Setting2 = "DEF" };
 
-    public static MockSingletonPreDefinedTypes Numbers { get; } = new() { Setting1 = "123", Setting2 = "456" };
+    public static MockSingletonPreDefinedTypes Numbers { get; } =
+        new() { Setting1 = "123", Setting2 = "456" };
 
-    public static MockSingletonPreDefinedTypes Symbols { get; } = new() { Setting1 = "!@#", Setting2 = "$%^" };
+    public static MockSingletonPreDefinedTypes Symbols { get; } =
+        new() { Setting1 = "!@#", Setting2 = "$%^" };
 
     #endregion
 
@@ -36,8 +41,7 @@ internal class MockSingletonPreDefinedTypes : SingletonBase<MockSingletonPreDefi
 
     #region Methods
 
-    public static void SetInstance(MockSingletonPreDefinedTypes value) =>
-        SetBaseInstance(value);
+    public static void SetInstance(MockSingletonPreDefinedTypes value) => SetBaseInstance(value);
 
     #endregion
 }

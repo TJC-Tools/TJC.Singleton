@@ -16,10 +16,15 @@ public class ValidInstanceTest
         var ids = singletons.DistinctBy(x => x.Id).Select(x => x.Id).ToList();
 
         // Create Message
-        var instancesAmountMessage = $"[{ids.Count}/{singletons.Count}] Instances of [{nameof(MockSingletonValid)}] Exist";
+        var instancesAmountMessage =
+            $"[{ids.Count}/{singletons.Count}] Instances of [{nameof(MockSingletonValid)}] Exist";
         Trace.WriteLine(instancesAmountMessage);
 
         // Ensure there is only one instance of the thread safe singleton
-        Assert.AreEqual(1, ids.Count, $"\nMultiple {instancesAmountMessage}\n• {string.Join("\n• ", ids)}");
+        Assert.AreEqual(
+            1,
+            ids.Count,
+            $"\nMultiple {instancesAmountMessage}\nï¿½ {string.Join("\nï¿½ ", ids)}"
+        );
     }
 }
