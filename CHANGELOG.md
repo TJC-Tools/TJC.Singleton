@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.6] - 2025-04-15
+
 ## [0.5.5] - 2024-12-03
 
 ## [0.5.4] - 2024-12-03
@@ -56,7 +58,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Created singleton base
 - Created factories to create all singletons
 
-[Unreleased]: https://github.com/TJC-Tools/TJC.Singleton/compare/v0.5.5...HEAD
+[Unreleased]: https://github.com/TJC-Tools/TJC.Singleton/compare/v0.5.6...HEAD
+
+[0.5.6]: https://github.com/TJC-Tools/TJC.Singleton/compare/v0.5.5...v0.5.6
 
 [0.5.5]: https://github.com/TJC-Tools/TJC.Singleton/compare/v0.5.4...v0.5.5
 
