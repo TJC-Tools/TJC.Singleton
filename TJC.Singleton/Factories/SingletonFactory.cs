@@ -4,6 +4,9 @@ using TJC.Singleton.Helpers;
 
 namespace TJC.Singleton.Factories;
 
+/// <summary>
+/// Factory for creating <seealso cref="SingletonBase{TDerivedClass}"/>'s.
+/// </summary>
 public static class SingletonFactory
 {
     #region Constants
