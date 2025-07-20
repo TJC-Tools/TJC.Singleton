@@ -34,14 +34,14 @@
 		<EmbeddedResource Include="..\LICENSE" />
   </ItemGroup>
   <!-- DEPENDENCIES -->
-  <ItemGroup>
-    <!-- N/A -->
-  </ItemGroup>
   <!-- TESTS -->
   <ItemGroup>
     <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
       <_Parameter1>TJC.Singleton.Tests</_Parameter1>
     </AssemblyAttribute>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.7" />
   </ItemGroup>
   <!-- TASKS -->
   <UsingTask TaskName="ReadFileContent" TaskFactory="RoslynCodeTaskFactory" AssemblyName="Microsoft.Build.Tasks.Core">
