@@ -1,5 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
-using System.Reflection;
+﻿using System.Reflection;
+using Microsoft.Extensions.Logging;
 using TJC.Singleton.Helpers;
 
 namespace TJC.Singleton.Factories;
@@ -24,7 +24,11 @@ public static class SingletonFactory
     /// <param name="logger"></param>
     /// <param name="logLevel"></param>
     /// <exception cref="Exception"></exception>
-    public static void InstantiateAll(ILogger? logger = null, LogLevel logLevel = LogLevel.Trace, bool throwIfFailed = false)
+    public static void InstantiateAll(
+        ILogger? logger = null,
+        LogLevel logLevel = LogLevel.Trace,
+        bool throwIfFailed = false
+    )
     {
         var failedToInstantiate = new List<string>();
         var singletons = GetSingletonTypes();
@@ -83,7 +87,11 @@ public static class SingletonFactory
     /// <param name="logLevel"></param>
     /// <returns></returns>
     /// <exception cref="Exception"></exception>
-    private static bool Instantiate(this Type singleton, ILogger? logger = null, LogLevel logLevel = LogLevel.Trace)
+    private static bool Instantiate(
+        this Type singleton,
+        ILogger? logger = null,
+        LogLevel logLevel = LogLevel.Trace
+    )
     {
         logger?.Log(logLevel, "[{name}] Instantiating", singleton.Name);
         var instanceProp =
@@ -92,7 +100,12 @@ public static class SingletonFactory
                 BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy
             ) ?? throw new Exception($"[{singleton.Name}] does not have property [{InstanceName}]");
         var instanceValue = instanceProp.GetValue(singleton);
-        logger?.Log(logLevel, "[{name}] {result}", singleton.Name, instanceValue != null ? "Instantiated" : "Failed to Instantiate");
+        logger?.Log(
+            logLevel,
+            "[{name}] {result}",
+            singleton.Name,
+            instanceValue != null ? "Instantiated" : "Failed to Instantiate"
+        );
         return instanceValue != null;
     }
 }
