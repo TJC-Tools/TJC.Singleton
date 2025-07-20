@@ -1,4 +1,5 @@
 ﻿using TJC.Singleton.Factories;
+using TJC.Singleton.Tests.Mocks.Logging;
 
 namespace TJC.Singleton.Tests.Tests.Instantiated;
 
@@ -13,7 +14,7 @@ public class IsInstantiatedTest
             MockSingletonInstantiated.IsInstantiated,
             $"{nameof(MockSingletonInstantiated)} was already instantiated"
         );
-        SingletonFactory.InstantiateAll(trace: true);
+        SingletonFactory.InstantiateAll(MockLogger.Default);
         Assert.IsTrue(
             MockSingletonInstantiated.IsInstantiated,
             $"{nameof(MockSingletonInstantiated)} is not instantiated"

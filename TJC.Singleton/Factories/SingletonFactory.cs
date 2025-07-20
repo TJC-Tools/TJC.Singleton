@@ -1,9 +1,12 @@
-﻿using System.Diagnostics;
+﻿using Microsoft.Extensions.Logging;
 using System.Reflection;
 using TJC.Singleton.Helpers;
 
 namespace TJC.Singleton.Factories;
 
+/// <summary>
+/// Factory for creating <seealso cref="SingletonBase{TDerivedClass}"/>'s.
+/// </summary>
 public static class SingletonFactory
 {
     #region Constants
@@ -17,19 +20,19 @@ public static class SingletonFactory
     /// <summary>
     /// Instantiate all singletons in the current app domain.
     /// </summary>
-    /// <param name="trace"></param>
     /// <param name="throwIfFailed"></param>
+    /// <param name="logger"></param>
+    /// <param name="logLevel"></param>
     /// <exception cref="Exception"></exception>
-    public static void InstantiateAll(bool trace = true, bool throwIfFailed = false)
+    public static void InstantiateAll(ILogger? logger = null, LogLevel logLevel = LogLevel.Trace, bool throwIfFailed = false)
     {
         var failedToInstantiate = new List<string>();
         var singletons = GetSingletonTypes();
 
-        if (trace)
-            Trace.WriteLine($"{singletons.Count} Singletons Found");
+        logger?.Log(logLevel, "{count} Singletons Found", singletons.Count);
 
         foreach (var singleton in singletons)
-            if (!singleton.Instantiate(trace))
+            if (!singleton.Instantiate(logger, logLevel))
                 failedToInstantiate.Add(singleton.Name);
 
         if (throwIfFailed && failedToInstantiate.Count > 0)
@@ -63,34 +66,33 @@ public static class SingletonFactory
     }
 
     /// <summary>
-    /// Instantiates a singleton of type <seealso cref="T"/>.
+    /// Instantiates a singleton of type <typeparamref name="T"/>.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    /// <param name="trace"></param>
+    /// <param name="logger"></param>
+    /// <param name="logLevel"></param>
     /// <returns></returns>
-    public static bool Instantiate<T>(bool trace) => Instantiate(typeof(T), trace);
+    public static bool Instantiate<T>(ILogger? logger = null, LogLevel logLevel = LogLevel.Trace) =>
+        Instantiate(typeof(T), logger, logLevel);
 
     /// <summary>
     /// Instantiates a singleton of given type.
     /// </summary>
     /// <param name="singleton"></param>
-    /// <param name="trace"></param>
+    /// <param name="logger"></param>
+    /// <param name="logLevel"></param>
     /// <returns></returns>
     /// <exception cref="Exception"></exception>
-    private static bool Instantiate(this Type singleton, bool trace)
+    private static bool Instantiate(this Type singleton, ILogger? logger = null, LogLevel logLevel = LogLevel.Trace)
     {
-        if (trace)
-            Trace.WriteLine($"[{singleton.Name}] Instantiating");
+        logger?.Log(logLevel, "[{name}] Instantiating", singleton.Name);
         var instanceProp =
             singleton.GetProperty(
                 InstanceName,
                 BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy
             ) ?? throw new Exception($"[{singleton.Name}] does not have property [{InstanceName}]");
         var instanceValue = instanceProp.GetValue(singleton);
-        if (trace)
-            Trace.WriteLine(
-                $"[{singleton.Name}] {(instanceValue != null ? "Instantiated" : "Failed to Instantiate")}"
-            );
+        logger?.Log(logLevel, "[{name}] {result}", singleton.Name, instanceValue != null ? "Instantiated" : "Failed to Instantiate");
         return instanceValue != null;
     }
 }

@@ -4,7 +4,7 @@ using TJC.Singleton.Helpers;
 namespace TJC.Singleton;
 
 /// <summary>
-/// Creates a single instance of <seealso cref="TDerivedClass"/> that can be accessed through the <see cref="Instance"/> property.
+/// Creates a single instance of <typeparamref name="TDerivedClass"/> that can be accessed through the <see cref="Instance"/> property.
 /// </summary>
 /// <typeparam name="TDerivedClass"></typeparam>
 /// <exception cref="InvalidSingletonConstructorException">Must have a non-public parameterless constructor.</exception>

@@ -3,12 +3,15 @@ using TJC.Singleton.Exceptions;
 
 namespace TJC.Singleton.Helpers;
 
+/// <summary>
+/// Helpers for constructing <seealso cref="SingletonBase{TDerivedClass}"/>.
+/// </summary>
 public static class SingletonConstructorHelpers
 {
     #region Get Singlet Constructor
 
     /// <summary>
-    /// Gets the singleton constructor for the type <seealso cref="T"/>.
+    /// Gets the singleton constructor for the type <typeparamref name="T"/>.
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <returns></returns>
@@ -45,7 +48,7 @@ public static class SingletonConstructorHelpers
     #region Check if Singleton has Valid Constructor
 
     /// <summary>
-    /// Checks if a singleton of type <seealso cref="T"/> has a valid constructor.
+    /// Checks if a singleton of type <typeparamref name="T"/>. has a valid constructor.
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <returns></returns>
