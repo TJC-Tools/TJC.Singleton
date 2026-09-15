@@ -6,43 +6,43 @@ using TJC.Singleton.Tests.Mocks.Valid;
 
 namespace TJC.Singleton.Tests.Tests;
 
-[TestClass]
+
 public class SingletonFactoryTests
 {
-    [TestMethod]
+    [Fact]
     public void Instantiate_ValidSingleton_ReturnsTrue()
     {
-        Assert.IsTrue(SingletonFactory.Instantiate<MockSingletonValid>());
+        Assert.True(SingletonFactory.Instantiate<MockSingletonValid>());
     }
 
-    [TestMethod]
+    [Fact]
     public void Instantiate_TypeWithoutInstanceProperty_ThrowsException()
     {
-        Assert.ThrowsException<Exception>(() => SingletonFactory.Instantiate<string>());
+        Assert.Throws<Exception>(() => SingletonFactory.Instantiate<string>());
     }
 
-    [TestMethod]
+    [Fact]
     public void GetSingletonConstructor_MultiplePublicConstructors_DescribesPluralConstructors()
     {
-        var exception = Assert.ThrowsException<InvalidSingletonConstructorException>(
+        var exception = Assert.Throws<InvalidSingletonConstructorException>(
             () => SingletonConstructorHelpers.GetSingletonConstructor(typeof(MultiplePublicConstructors))
         );
 
-        StringAssert.Contains(exception.Message, "constructors");
+        Assert.Contains("constructors", exception.Message);
     }
 
-    [TestMethod]
+    [Fact]
     public void HasValidSingletonConstructor_GenericValidSingleton_ReturnsTrue()
     {
-        Assert.IsTrue(SingletonConstructorHelpers.HasValidSingletonConstructor<MockSingletonValid>());
+        Assert.True(SingletonConstructorHelpers.HasValidSingletonConstructor<MockSingletonValid>());
     }
 
-    [TestMethod]
+    [Fact]
     public void SingletonInitializationException_PreservesMessage()
     {
         var exception = new SingletonInitializationException("initialization failed");
 
-        Assert.AreEqual("initialization failed", exception.Message);
+        Assert.Equal("initialization failed", exception.Message);
     }
 
     private class MultiplePublicConstructors : SingletonBase<MultiplePublicConstructors>

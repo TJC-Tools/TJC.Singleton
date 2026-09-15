@@ -1,4 +1,4 @@
-﻿namespace TJC.Singleton.Tests.Mocks.NonThreadSafe;
+namespace TJC.Singleton.Tests.Mocks.NonThreadSafe;
 
 /// <summary>
 /// This singleton is intentionally non-thread safe.

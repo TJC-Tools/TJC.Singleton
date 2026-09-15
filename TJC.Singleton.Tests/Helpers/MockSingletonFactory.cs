@@ -1,4 +1,4 @@
-﻿namespace TJC.Singleton.Tests.Helpers;
+namespace TJC.Singleton.Tests.Helpers;
 
 internal static class MockSingletonFactory
 {

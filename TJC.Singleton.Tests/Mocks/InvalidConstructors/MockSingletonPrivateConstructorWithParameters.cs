@@ -1,4 +1,4 @@
-﻿namespace TJC.Singleton.Tests.Mocks.InvalidConstructors;
+namespace TJC.Singleton.Tests.Mocks.InvalidConstructors;
 
 internal class MockSingletonPrivateConstructorWithParameters
     : SingletonBase<MockSingletonPrivateConstructorWithParameters>,

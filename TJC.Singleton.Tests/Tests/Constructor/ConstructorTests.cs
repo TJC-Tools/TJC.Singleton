@@ -1,42 +1,42 @@
-﻿namespace TJC.Singleton.Tests.Tests.Constructor;
+namespace TJC.Singleton.Tests.Tests.Constructor;
 
-[TestClass]
+
 public class ConstructorTests
 {
-    [TestMethod]
+    [Fact]
     public void PrivateConstructorIsInitialized()
     {
-        Assert.IsNotNull(MockSingletonValid.Instance);
+        Assert.NotNull(MockSingletonValid.Instance);
     }
 
-    [TestMethod]
+    [Fact]
     public void NoConstructorThrowsException()
     {
-        Assert.ThrowsException<InvalidSingletonConstructorException>(() =>
+        Assert.Throws<InvalidSingletonConstructorException>(() =>
             MockSingletonNoConstructor.Instance
         );
     }
 
-    [TestMethod]
+    [Fact]
     public void PublicParameterlessConstructorThrowsException()
     {
-        Assert.ThrowsException<InvalidSingletonConstructorException>(() =>
+        Assert.Throws<InvalidSingletonConstructorException>(() =>
             MockSingletonPublicParameterLessConstructor.Instance
         );
     }
 
-    [TestMethod]
+    [Fact]
     public void ProtectedConstructorWithParametersThrowsException()
     {
-        Assert.ThrowsException<InvalidSingletonConstructorException>(() =>
+        Assert.Throws<InvalidSingletonConstructorException>(() =>
             MockSingletonProtectedConstructorWithParameters.Instance
         );
     }
 
-    [TestMethod]
+    [Fact]
     public void PrivateConstructorWithParametersThrowsException()
     {
-        Assert.ThrowsException<InvalidSingletonConstructorException>(() =>
+        Assert.Throws<InvalidSingletonConstructorException>(() =>
             MockSingletonPrivateConstructorWithParameters.Instance
         );
     }

@@ -1,6 +1,6 @@
 namespace TJC.Singleton.Tests.Tests.ThreadSafety;
 
-[TestClass]
+
 public class NonThreadSafeInstanceTest
 {
     /// <summary>
@@ -9,7 +9,7 @@ public class NonThreadSafeInstanceTest
     /// <para>There will usually be 2-5 different instances out of 100 tries.</para>
     /// <para>Therefore, this can only be used as a sanity check to ensure that the other tests that follow this pattern are valid.</para>
     /// </summary>
-    [TestMethod]
+    [Fact]
     public void NonThreadSafeSingletonHasMultipleInstances()
     {
         // Create 100 Instances of Singleton
@@ -29,6 +29,6 @@ public class NonThreadSafeInstanceTest
         // Ensure there are multiple different instances of the non-thread safe singleton
         // This is only a sanity check
         if (ids.Count == 1)
-            Assert.Inconclusive($"\nOnly {instancesAmountMessage}");
+            throw Xunit.Sdk.SkipException.ForSkip($"\nOnly {instancesAmountMessage}");
     }
 }

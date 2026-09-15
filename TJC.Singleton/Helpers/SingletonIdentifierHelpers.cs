@@ -1,4 +1,4 @@
-﻿namespace TJC.Singleton.Helpers;
+namespace TJC.Singleton.Helpers;
 
 /// <summary>
 /// Helpers for identifying details about <seealso cref="SingletonBase{TDerivedClass}"/>.

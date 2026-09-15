@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using TJC.Singleton.Exceptions;
 
 namespace TJC.Singleton.Helpers;

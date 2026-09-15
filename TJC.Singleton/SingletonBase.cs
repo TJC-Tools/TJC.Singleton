@@ -1,4 +1,4 @@
-﻿using TJC.Singleton.Exceptions;
+using TJC.Singleton.Exceptions;
 using TJC.Singleton.Helpers;
 
 namespace TJC.Singleton;

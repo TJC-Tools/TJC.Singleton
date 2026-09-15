@@ -1,4 +1,4 @@
-﻿namespace TJC.Singleton.Tests.Interfaces;
+namespace TJC.Singleton.Tests.Interfaces;
 
 internal interface IIdentifier
 {

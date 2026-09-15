@@ -1,12 +1,12 @@
 namespace TJC.Singleton.Tests.Tests.ThreadSafety;
 
-[TestClass]
+
 public class ValidInstanceTest
 {
     /// <summary>
     /// This test creates 100 instances of the thread safe singleton to ensure that only one instance can ever be created.
     /// </summary>
-    [TestMethod]
+    [Fact]
     public void ValidSingletonHasSingleInstance()
     {
         // Create 100 Instances of Singleton
@@ -21,9 +21,8 @@ public class ValidInstanceTest
         Trace.WriteLine(instancesAmountMessage);
 
         // Ensure there is only one instance of the thread safe singleton
-        Assert.AreEqual(
-            1,
-            ids.Count,
+        Assert.True(
+            1 == ids.Count,
             $"\nMultiple {instancesAmountMessage}\n� {string.Join("\n� ", ids)}"
         );
     }

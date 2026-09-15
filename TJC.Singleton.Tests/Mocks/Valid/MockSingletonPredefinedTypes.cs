@@ -1,4 +1,4 @@
-﻿namespace TJC.Singleton.Tests.Mocks.Valid;
+namespace TJC.Singleton.Tests.Mocks.Valid;
 
 /// <summary>
 /// This singleton is an example of the proper intended use of the <see cref="SingletonBase{TMyClass}"/>.

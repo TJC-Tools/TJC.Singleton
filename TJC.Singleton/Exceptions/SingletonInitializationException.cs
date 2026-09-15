@@ -1,4 +1,4 @@
-﻿namespace TJC.Singleton.Exceptions;
+namespace TJC.Singleton.Exceptions;
 
 /// <summary>
 /// This exception is thrown when a singleton fails to initialize.

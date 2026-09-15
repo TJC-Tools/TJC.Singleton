@@ -1,4 +1,4 @@
-﻿namespace TJC.Singleton.Tests.Mocks.Valid;
+namespace TJC.Singleton.Tests.Mocks.Valid;
 
 internal class MockSingletonInstantiated : SingletonBase<MockSingletonInstantiated>, IIdentifier
 {
