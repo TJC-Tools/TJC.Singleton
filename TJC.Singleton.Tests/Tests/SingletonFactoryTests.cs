@@ -24,8 +24,8 @@ public class SingletonFactoryTests
     [TestMethod]
     public void GetSingletonConstructor_MultiplePublicConstructors_DescribesPluralConstructors()
     {
-        var exception = Assert.ThrowsException<InvalidSingletonConstructorException>(
-            () => SingletonConstructorHelpers.GetSingletonConstructor(typeof(MultiplePublicConstructors))
+        var exception = Assert.ThrowsException<InvalidSingletonConstructorException>(() =>
+            SingletonConstructorHelpers.GetSingletonConstructor(typeof(MultiplePublicConstructors))
         );
 
         StringAssert.Contains(exception.Message, "constructors");
@@ -34,7 +34,9 @@ public class SingletonFactoryTests
     [TestMethod]
     public void HasValidSingletonConstructor_GenericValidSingleton_ReturnsTrue()
     {
-        Assert.IsTrue(SingletonConstructorHelpers.HasValidSingletonConstructor<MockSingletonValid>());
+        Assert.IsTrue(
+            SingletonConstructorHelpers.HasValidSingletonConstructor<MockSingletonValid>()
+        );
     }
 
     [TestMethod]
