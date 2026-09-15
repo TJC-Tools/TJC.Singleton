@@ -1,6 +1,5 @@
 namespace TJC.Singleton.Tests.Tests.ThreadSafety;
 
-
 public class NonThreadSafeInstanceTest
 {
     /// <summary>
