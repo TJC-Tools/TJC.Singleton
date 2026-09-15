@@ -4,10 +4,14 @@
 
 [![NuGet Downloads](https://img.shields.io/nuget/dt/TJC.Singleton)](https://www.nuget.org/packages/TJC.Singleton)
 ![Size](https://img.shields.io/github/repo-size/TJC-Tools/TJC.Singleton)
+[![Scc Count Badge](https://sloc.xyz/github/TJC-Tools/TJC.Singleton?category=code)](https://github.com/TJC-Tools/TJC.Singleton?category=code)
 [![License](https://img.shields.io/github/license/TJC-Tools/TJC.Singleton.svg)](LICENSE)
 
-[![tests](https://github.com/TJC-Tools/TJC.Singleton/actions/workflows/ct-matrix.yml/badge.svg)](https://github.com/TJC-Tools/TJC.Singleton/actions/workflows/ct-matrix.yml)
-[![codecov](https://codecov.io/gh/TJC-Tools/TJC.Test/graph/badge.svg?token=92707C5KH4)](https://codecov.io/gh/TJC-Tools/TJC.Singleton)
+[![Testing Matrix](https://github.com/TJC-Tools/TJC.Singleton/actions/workflows/ct-matrix.yml/badge.svg)](https://github.com/TJC-Tools/TJC.Singleton/actions/workflows/ct-matrix.yml)
+[![MegaLinter](https://github.com/TJC-Tools/TJC.Singleton/actions/workflows/mega-linter.yml/badge.svg)](https://github.com/TJC-Tools/TJC.Singleton/actions/workflows/mega-linter.yml)
+[![codecov](https://codecov.io/gh/TJC-Tools/TJC.Singleton/graph/badge.svg?token=QGGJOGUBV0)](https://codecov.io/gh/TJC-Tools/TJC.Singleton)
+
+[![BuyMeACoffee](https://raw.githubusercontent.com/pachadotdev/buymeacoffee-badges/main/bmc-yellow.svg)](https://buymeacoffee.com/tylercarrol)
 
 ## Documentation
 - [Changelog](CHANGELOG.md)
