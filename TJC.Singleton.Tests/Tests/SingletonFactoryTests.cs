@@ -6,7 +6,6 @@ using TJC.Singleton.Tests.Mocks.Valid;
 
 namespace TJC.Singleton.Tests.Tests;
 
-
 public class SingletonFactoryTests
 {
     [Fact]
@@ -24,8 +23,8 @@ public class SingletonFactoryTests
     [Fact]
     public void GetSingletonConstructor_MultiplePublicConstructors_DescribesPluralConstructors()
     {
-        var exception = Assert.Throws<InvalidSingletonConstructorException>(
-            () => SingletonConstructorHelpers.GetSingletonConstructor(typeof(MultiplePublicConstructors))
+        var exception = Assert.Throws<InvalidSingletonConstructorException>(() =>
+            SingletonConstructorHelpers.GetSingletonConstructor(typeof(MultiplePublicConstructors))
         );
 
         Assert.Contains("constructors", exception.Message);

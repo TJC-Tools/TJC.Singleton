@@ -1,6 +1,5 @@
 namespace TJC.Singleton.Tests.Tests.Constructor;
 
-
 public class ConstructorTests
 {
     [Fact]

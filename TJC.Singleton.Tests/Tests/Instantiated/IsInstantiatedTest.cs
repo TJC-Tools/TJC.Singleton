@@ -3,7 +3,6 @@ using TJC.Singleton.Tests.Mocks.Logging;
 
 namespace TJC.Singleton.Tests.Tests.Instantiated;
 
-
 public class IsInstantiatedTest
 {
     [Fact]
