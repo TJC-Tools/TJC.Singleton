@@ -8,7 +8,7 @@
     <Description>Singleton Base &amp; Singleton Factory</Description>
     <Authors>Tyler Carrol</Authors>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)/../CHANGELOG.md"))</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/TJC-Tools/TJC.Singleton</RepositoryUrl>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
