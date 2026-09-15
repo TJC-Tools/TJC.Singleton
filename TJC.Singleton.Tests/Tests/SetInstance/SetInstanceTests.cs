@@ -1,6 +1,5 @@
 namespace TJC.Singleton.Tests.Tests.SetInstance;
 
-
 public class SetInstanceTests
 {
     [Fact]
